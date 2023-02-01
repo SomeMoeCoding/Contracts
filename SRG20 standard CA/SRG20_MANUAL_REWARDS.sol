@@ -367,8 +367,9 @@ contract srg20 is IERC20, Context, Ownable, ReentrancyGuard {
 
     //Tax wallets
     address public teamWallet = 0x3d97A6dF348ae579C2CE746be51d2a6818cbB455; // change wallet
-    address private _uniAddress = 0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f; // PCS or uniswap to block the router
+    address private _uniAddress = 0x6d10994EF28aA037c686eB97C12F296645dD9f08 ; // PCS or uniswap to block the router
     // pcs address if needed: 0x10ED43C718714eb63d5aA57B78B54704E256024E
+    
     // Tax Split
     uint256 public teamShare = 200;
     uint256 public rewardShare = 800;
