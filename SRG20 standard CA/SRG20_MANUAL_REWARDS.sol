@@ -557,6 +557,18 @@ contract srg20 is IERC20, Context, Ownable, ReentrancyGuard {
         // give amount to receiver
         _balances[recipient] = _balances[recipient] + amount;
 
+        if (!isDividendExempt[sender]) {
+            try
+            dividendDistributor.setShare(sender, _balances[sender])
+            {} catch {}
+        }
+
+        if (!isDividendExempt[recipient]) {
+            try
+            dividendDistributor.setShare(recipient, _balances[recipient])
+            {} catch {}
+        }
+
         // Transfer Event
         emit Transfer(sender, recipient, amount);
         return true;
